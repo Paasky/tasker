@@ -62,24 +62,24 @@ class TaskResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('priority')
                     ->badge()
-                    ->color(fn (TaskPriority $state) => match ($state) {
+                    ->color(fn(TaskPriority $state) => match ($state) {
                         TaskPriority::NONE, TaskPriority::LOW => 'gray',
                         TaskPriority::MEDIUM => 'info',
                         TaskPriority::HIGH => 'warning',
                         TaskPriority::URGENT => 'danger',
                     })
-                    ->formatStateUsing(fn (TaskPriority $state): string => $state->title())
+                    ->formatStateUsing(fn(TaskPriority $state): string => $state->title())
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
-                    ->color(fn (TaskStatus $state) => match ($state) {
+                    ->color(fn(TaskStatus $state) => match ($state) {
                         TaskStatus::BACKLOG, TaskStatus::TODO => 'gray',
                         TaskStatus::IN_QA, TaskStatus::IN_PROGRESS => 'info',
                         TaskStatus::READY_FOR_QA, TaskStatus::READY_TO_DEPLOY => 'warning',
                         TaskStatus::DEPLOYED, TaskStatus::DONE => 'success',
                         TaskStatus::CANCELLED => 'danger',
                     })
-                    ->formatStateUsing(fn (TaskStatus $state): string => $state->title())
+                    ->formatStateUsing(fn(TaskStatus $state): string => $state->title())
                     ->sortable(),
                 Tables\Columns\TextColumn::make('user.name')
                     ->searchable()

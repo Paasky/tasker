@@ -11,7 +11,7 @@ trait TaskerEnum
     {
         return Arr::mapWithKeys(
             static::cases(),
-            fn (self $status) => [$status->value => $status->title()]
+            fn(self $status) => [$status->value => $status->title()]
         );
     }
 

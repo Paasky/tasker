@@ -24,7 +24,7 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => fn () => User::factory()->create(),
+            'user_id' => fn() => User::factory()->create(),
             'title' => Str::title($this->faker->words(rand(1, 4), true)),
             'description' => rand(0, 1)
                 ? $this->faker->paragraph
