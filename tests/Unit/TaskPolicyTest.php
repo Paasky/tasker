@@ -16,12 +16,12 @@ class TaskPolicyTest extends TestCase
     {
         $user = User::factory()->create();
 
-        // No one can view any
-        $this->assertFalse(
+        // Anyone can view any
+        $this->assertTrue(
             (new TaskPolicy())->viewAny($user)
         );
 
-        $this->assertFalse(
+        $this->assertTrue(
             $user->can('viewAny', Task::class)
         );
     }

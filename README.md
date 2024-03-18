@@ -21,6 +21,7 @@
 1. `php artisan serve`
    - Navigate to link given (default http://127.0.0.1:8000)
 2. Login as `test@example.com` password `password`
+3. Navigate to `/admin/tasks`
 
 ## Notes
 - I've included a package I've created `paasky/laravel-model-test`, that tests model relations with a single test

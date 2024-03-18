@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('title');
             $table->string('description')->nullable();
-            $table->string('priority')->index();
+            $table->integer('priority')->index();
             $table->string('status')->index();
-            $table->dateTimeTz('due')->nullable()->index();
+            $table->date('due')->nullable()->index();
             $table->timestampsTz();
             $table->softDeletesTz();
         });

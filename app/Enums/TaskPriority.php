@@ -2,10 +2,13 @@
 
 namespace App\Enums;
 
-enum TaskPriority: string
+enum TaskPriority: int
 {
-    case LOW = 'low';
-    case MEDIUM = 'medium';
-    case HIGH = 'high';
-    case URGENT = 'urgent';
+    use TaskerEnum;
+
+    case NONE = 0;
+    case LOW = 1;
+    case MEDIUM = 2;
+    case HIGH = 3;
+    case URGENT = 4;
 }

@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\TaskPriority;
+use App\Enums\TaskStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,6 +21,12 @@ class Task extends Model
         'priority',
         'status',
         'due',
+    ];
+
+    protected $casts = [
+        'priority' => TaskPriority::class,
+        'status' => TaskStatus::class,
+        'due' => 'date',
     ];
 
     public function user(): BelongsTo
