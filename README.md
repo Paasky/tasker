@@ -21,7 +21,14 @@
 1. `php artisan serve`
    - Navigate to link given (default http://127.0.0.1:8000)
 2. Login as `test@example.com` password `password`
-3. Navigate to `/admin/tasks`
+3. Navigate to `Tasks`
 
 ## Notes
 - I've included a package I've created `paasky/laravel-model-test`, that tests model relations with a single test
+- A single User can only have 10 tasks at a time
+
+## Potential next steps
+- Task Update notification includes what exactly was updated (from -> to)
+- Send Task Update notification to previous assignee if it's changed
+- Update error handling to show a nice error if trying to create more than 10 tasks
+- More comprehensive TaskAdmin tests (per column in table, table actions, update & delete)

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Enums\TaskPriority;
 use App\Enums\TaskStatus;
+use App\Events\TaskCreated;
+use App\Events\TaskUpdated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -27,6 +29,12 @@ class Task extends Model
         'priority' => TaskPriority::class,
         'status' => TaskStatus::class,
         'due' => 'date',
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => TaskCreated::class,
+        'updated' => TaskUpdated::class,
+        'deleted' => TaskUpdated::class,
     ];
 
     public function user(): BelongsTo

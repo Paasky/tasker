@@ -26,6 +26,7 @@ class TaskResource extends Resource
                     ->relationship('user', 'name')
                     ->searchable()
                     ->preload()
+                    ->exists('users', 'id')
                     ->required(),
 
                 Forms\Components\TextInput::make('title')
