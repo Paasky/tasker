@@ -10,12 +10,12 @@
 
 ## Installation
 1. `composer install`
-2. `php artisan migrate`
-3. `php artisan db:seed`
-4. `npm install`
-5. `npm run build`
-6. Edit `.env`
-   - Change `APP_NAME=Tasker`
+2. `cp .env.example .env`
+3. `php artisan key:generate`
+4. `php artisan migrate`
+5. `php artisan db:seed`
+6. `npm install`
+7. `npm run build`
 
 ## Running
 1. `php artisan serve`
